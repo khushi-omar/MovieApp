@@ -72,16 +72,22 @@ function App() {
         </header>
 
         <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search for movies..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button onClick={() => searchMovies(searchTerm)}>
-            <img src={SearchIcon} alt="Search" />
-          </button>
-        </div>
+  <input
+    type="text"
+    placeholder="Search for movies..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        searchMovies(searchTerm);
+      }
+    }}
+  />
+  <button onClick={() => searchMovies(searchTerm)}>
+    <img src={SearchIcon} alt="Search" />
+  </button>
+</div>
+
 
         {movies?.length > 0 ? (
           <div className="container">
