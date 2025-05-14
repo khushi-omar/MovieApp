@@ -43,8 +43,8 @@ function App() {
           <li onClick={() => searchMovies("Action")}><FaFilm/> Action</li>
           <li onClick={() => searchMovies("Comedy")}><FaLaugh/> Comedy</li>
           <li onClick={() => searchMovies("Sci-Fi")}><FaRobot/> Sci-Fi</li>
-          <li onClick={() => searchMovies("Sci-Fi")}><FaHeart/> Popular</li>
-          <li onClick={() => searchMovies("Sci-Fi")}><FaRobot/> Favourites</li>
+          <li onClick={() => searchMovies("Sci-Fi")}><FaPoll/> Popular</li>
+          <li onClick={() => searchMovies("Sci-Fi")}><FaHeart/> Favourites</li>
           <li onClick={() => searchMovies("2023")}><FaClock/> Latest</li>
           <li onClick={() => alert("Built by Khushi")}><FaInfoCircle/> About</li>
         </ul>
@@ -55,6 +55,34 @@ function App() {
           <h1 className="gradient-text">🎬 MovieHUB</h1>
           <p>Your go-to place for everything movies!</p>
         </header>
+
+      <section className="trailer-strip ">
+  
+  <div className="trailer-row">
+    <div className="trailer-card">
+      <iframe
+        src="https://www.youtube.com/embed/DotnJ7tTA34"
+        title="House of the Dragon"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      ></iframe>
+      <p>House of the Dragon</p>
+    </div>
+    <div className="trailer-card">
+      <iframe
+        src="https://www.youtube.com/embed/Way9Dexny3w"
+        title="Dune: Part Two"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      ></iframe>
+      <p>Dune: Part Two</p>
+    </div>
+    
+  </div>
+</section>
+
 
         <div className="search-bar">
           <input
