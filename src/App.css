@@ -16,6 +16,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-main);
+  /* Prevent horizontal scroll */
   
 }
 
@@ -31,7 +32,8 @@ body {
       background-size: contain ;
       background-position: center;
       position: relative;
-      
+    overflow-x: hidden;
+  width: 100%;  
   
 }
 
@@ -227,12 +229,13 @@ body {
 
 .trailer-card {
   flex: 1;
-  
   min-width: 650px;
   max-width: 1150px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+   
 }
 
 .trailer-card iframe {
@@ -241,6 +244,8 @@ body {
   border-radius: 8px;
   margin-bottom: 0.1rem;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+
+  
 }
 
 .trailer-card p {
@@ -314,6 +319,23 @@ body {
   outline: none;
 }
 
+.search-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button img {
+  width: 18px; /* adjust as needed */
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes dark icon white */
+}
+
 .search-glass button img {
   width: 20px;
   cursor: pointer;
@@ -324,6 +346,7 @@ body {
   white-space: nowrap;
   padding-bottom: 10px;
 }
+
 
 .scroll-poster {
   display: inline-block;
@@ -339,10 +362,79 @@ body {
   transform: scale(1.3);
 }
 
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
   .scroll-poster {
     width: 120px;
     height: 180px;
   }
 }
-*/
+
+
+
+/* Add this at the bottom of App.css */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .main-content .sidebar {
+    width: 100%;
+    order: 2;
+  }
+
+  .main-content .movie-list {
+    order: 1;
+  }
+
+  .movie-list .movies {
+    justify-content: center;
+  }
+
+  .movie-card {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .search-bar input {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .sidebar h2 {
+    text-align: center;
+  }
+
+  .sidebar ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .sidebar li {
+    margin: 5px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .movies {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 80%;
+    margin: auto;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

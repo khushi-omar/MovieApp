@@ -251,7 +251,7 @@ function App() {
                 }
               }}
             />
-            <button onClick={() => searchMovies(searchTerm)}>
+            <button className="search-button" onClick={() => searchMovies(searchTerm)}>
               <img src={SearchIcon} alt="Search" />
             </button>
           </div>
@@ -291,19 +291,7 @@ function App() {
             </ul>
           )}
 
-          <div className="horizontal-scroll">
-            {movies.slice(0, 10).map((movie, index) => (
-              <img
-                key={index}
-                src={movie.Poster !== "N/A" ? movie.Poster : ""}
-                alt={movie.Title}
-                className="scroll-poster"
-              />
-            ))}
-           <h3> <p>Find your new favourite movies here!!</p> </h3>
-           <br/>
-           <br/>
-          </div>
+          
         </section>
 
         {movies?.length > 0 ? (
