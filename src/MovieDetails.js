@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './MovieDetails.css';
-import { FaStar, FaCalendarAlt, FaFilm, FaClock, FaGlobe, FaUsers, FaBookmark, FaArrowLeft } from 'react-icons/fa';
+import { FaStar, FaCalendarAlt, FaClock, FaGlobe, FaUsers, FaBookmark, FaArrowLeft } from 'react-icons/fa';
 
 const MovieDetails = ({ apiUrl }) => {
   const [movie, setMovie] = useState(null);

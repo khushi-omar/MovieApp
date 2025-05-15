@@ -8,6 +8,9 @@ import {
   FaHome, FaFilm, FaLaugh, FaRobot,
   FaClock, FaInfoCircle, FaPoll, FaHeart
 } from 'react-icons/fa';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const API_URL = "https://www.omdbapi.com?apikey=b169cf0";
 
@@ -80,6 +83,38 @@ function App() {
     searchMovies("Batman");
   }, []);
 
+  const carouselSettings = {
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
+
+
   const HomeContent = () => (
     <>
       <header className="app-header">
@@ -135,21 +170,25 @@ function App() {
           )}
         </div>
       
-      </section>
-          <section className="trailer-strip">
-          <div className="trailer-row">
-            <div className="trailer-card">
-              <iframe
-                src="https://www.youtube.com/embed/DotnJ7tTA34"
-                title="House of the Dragon"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              ></iframe>
-              <p>House of the Dragon</p>
-            </div>
-          </div>
         </section>
+
+
+          <section className="carousel-section">
+  <h2 className="carousel-title">🎞️ Recommended for You</h2>
+  <Slider {...carouselSettings}>
+    {movies.slice(0, 12).map((movie) => (
+      <div key={movie.imdbID} className="carousel-card" onClick={() => searchMovies(movie.Title)}>
+        <img
+          src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/200x300?text=No+Image"}
+          alt={movie.Title}
+        />
+        <p>{movie.Title}</p>
+      </div>
+    ))}
+  </Slider>
+</section>
+
+
         
       {movies?.length > 0 ? (
         <div className="container">
