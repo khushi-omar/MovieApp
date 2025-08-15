@@ -80,7 +80,7 @@ function App() {
   }, [searchTerm]);
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("Action");
   }, []);
 
   const carouselSettings = {
@@ -123,7 +123,7 @@ function App() {
       </header>
       
       <section className="hero-section">
-        <div className="search-container" onClick={(e) => e.stopPropagation()}>
+        <div className="search-container" onClick={(e) => e.stopPropagation()}>  
           <div className="search-glass">
             <input
               type="text"

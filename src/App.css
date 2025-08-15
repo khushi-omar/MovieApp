@@ -623,3 +623,115 @@ body {
 .slick-slide {
   padding: 0 10px;
 }
+
+
+
+
+/* ---------- MOVIE GRID ---------- */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+/* Movie card images scale nicely */
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ---------- NAVBAR & SEARCH ---------- */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 200px;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+/* ---------- CAROUSEL ---------- */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    min-width: 120px;
+  }
+}
+
+/* ---------- MOVIE DETAILS ---------- */
+.movie-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.movie-details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.details-content {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .movie-details {
+    flex-direction: column;
+  }
+  .details-content {
+    width: 100%;
+  }
+}
+
+/* ---------- TEXT RESIZE ---------- */
+@media (max-width: 500px) {
+  .title {
+    font-size: 1.2rem;
+  }
+  .overlay h3 {
+    font-size: 1rem;
+  }
+}
+/* Main container for home page */
+.home-container {
+  max-width: 1200px; /* prevents text from stretching too much on large screens */
+  margin: 0 auto;    /* centers content horizontally */
+  padding: 0 1rem;   /* adds side padding for small screens */
+}
+
+/* Section titles */
+.section-title {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
